@@ -9,6 +9,7 @@ def generate_user_data():
     user_data = user.get_user_info()
     return user_data
 
+
 @pytest.fixture
 def user_registration(generate_user_data):
     user_data = generate_user_data

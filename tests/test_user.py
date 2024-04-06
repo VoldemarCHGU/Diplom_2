@@ -5,7 +5,7 @@ from data import API_URL
 from helper import UserRequests
 
 
-class TestCreateUser():
+class TestCreateUser:
 
     @allure.title('Создание нового уникального пользователя')
     @allure.description('Успешная регистрация возвращает accessToken')
@@ -93,7 +93,7 @@ class TestPathUser:
                         'Expected: 401 - You should be authorised')
     @allure.link(API_URL.USER_PATCH_OR_DELETE)
     @pytest.mark.parametrize('field', ['email', 'password', 'name'])
-    def test_user_patch_unauthorized(elf, user_registration, generate_user_data, field):
+    def test_user_patch_unauthorized(self, user_registration, generate_user_data, field):
         user_data, _ = user_registration
         # Присваиваем новое значение для пользователя
         user_data[field] = generate_user_data[field]
