@@ -40,10 +40,6 @@ class UserRequests:
     def create_user(data):
         return requests.post(API_URL.CREATE_USER, data=data)
 
-    @allure.step(f'Удаление пользователя')
-    def delete_request_user(data):
-        return requests.delete(API_URL.USER_PATCH_OR_DELETE, headers=data)
-
     @allure.step('Авторизация пользователя')
     def user_auth(data):
         return requests.post(API_URL.LOGIN_USER, data=data)

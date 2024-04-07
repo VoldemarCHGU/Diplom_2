@@ -41,7 +41,7 @@ class TestCreateOrder:
         expected_message = "Ingredient ids must be provided"
         assert status_code == 400 and expected_message in message
 
-    @allure.title('Создание заказа c невалидныv хэшем ингредиента (c авторизацией)')
+    @allure.title('Создание заказа c невалидным хэшем ингредиента (c авторизацией)')
     @allure.description('Expected: 500 и Internal Server Error')
     @allure.link(API_URL.ORDERS)
     def test_create_order_after_auth_incorrect_ingredients(self, user_registration):
